@@ -4,7 +4,7 @@ import { TbShoppingBag } from "react-icons/tb";
 import {useState} from "react";
 
 const ROUTES = ["Home", "About", "Services", "Pricing", "Contact"];
-export function Nav() {
+export function Nav({onClickShoppingBtn}) {
     const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
     return (
 
@@ -35,7 +35,10 @@ export function Nav() {
                     })}
                 </ul>
             </div>
-            <div className="fixed bottom-4 left-4 lg:static btn-press-anim">
+            <div
+                onClick={onClickShoppingBtn}
+                className="fixed bottom-4 left-4 lg:static btn-press-anim"
+            >
                 <div className="flex-center cursor-pointer h-12 w-12 rounded-full bg-white shadow-md lg:mr-8">
                     <TbShoppingBag/>
                 </div>
