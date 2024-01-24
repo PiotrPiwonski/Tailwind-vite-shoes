@@ -8,7 +8,7 @@ export function Nav() {
     const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
     return (
 
-        <nav className="flex flex-wrap justify-between items-center">
+        <nav className="flex flex-wrap justify-between items-center z-10 relative">
             <a href="#">
                 <NikeLogo className="h-20 w-20"/>
             </a>
@@ -25,16 +25,18 @@ export function Nav() {
                     {ROUTES.map((route, i) => {
                        return <li
                            key={route}
-                           className={`py-2 px-2 cursor-pointer rounded 
+                           className={`py-2 px-2 cursor-pointer rounded lg:hover:bg-transparent
+                           lg:hover:text-blue-500
                            ${i===0 
                                ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500" 
-                               : "hover:bg-gray-100"}`}
+                               : "hover:bg-gray-100"} 
+                               ${(i === 3 || i === 4) && "lg:text-white" }`}
                        >{route}</li>
                     })}
                 </ul>
             </div>
             <div className="fixed bottom-4 left-4 lg:static">
-                <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md">
+                <div className="flex-center cursor-pointer h-12 w-12 rounded-full bg-white shadow-md lg:mr-8">
                     <TbShoppingBag/>
                 </div>
             </div>
