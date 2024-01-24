@@ -5,7 +5,10 @@ export function ShoeDetail() {
     return (
       <div className="flex flex-col lg:flex-row-reverse space-y-4">
           <div className="flex-1">
-              <img src={nike1} alt="shoe"/>
+              <div className="bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876]
+              via-40% to-[#4CC4C6] ">
+                  <img src={nike1} alt="shoe"/>
+              </div>
           </div>
           <div className="flex-1 space-y-6">
             <div className="text-5xl font-black md:text-9xl">
