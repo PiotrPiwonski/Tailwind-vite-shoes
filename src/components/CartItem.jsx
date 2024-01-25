@@ -2,7 +2,7 @@ import {CiTrash} from "react-icons/ci";
 import {Select} from "./Select.jsx";
 import {SIZES, QTY} from "../constant.js";
 
-export function CartItem({item: {product, qty, size}}) {
+export function CartItem({item: {product, qty, size}, onClickTrash}) {
     return (
         <div className="hover:bg-[#DAFFA2] p-2 cursor-pointer bg-gray-50 space-y-2
         dark:bg-transparent dark:hover:bg-night-50">
@@ -35,8 +35,11 @@ export function CartItem({item: {product, qty, size}}) {
                         />
                     </div>
                 </div>
-                <button>
-                    <CiTrash size={25} className="text-black dark:text-white"/>
+                <button onClick={() => onClickTrash(product.id)}>
+                    <CiTrash
+                        size={25}
+                        className="text-black dark:text-white"
+                    />
                 </button>
             </div>
         </div>
