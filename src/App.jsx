@@ -18,6 +18,7 @@ const FAKE_CART_ITEMS = SHOE_LIST.map((shoe) => {
 export function App() {
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [currentShoe, setCurrentShoe] = useState(SHOE_LIST[0]);
 
     useEffect(() => {
         const isDArkMode = localStorage.getItem("isDarkMode");
@@ -38,8 +39,8 @@ export function App() {
     <>
       <div className="animate-fadeIn p-10 xl:p-24 dark:bg-night">
         <Nav onClickShoppingBtn={() => setIsSidebarOpen(true)}/>
-        <ShoeDetail/>
-        <NewArrivalsSection items={SHOE_LIST}/>
+        <ShoeDetail shoe={currentShoe}/>
+        <NewArrivalsSection items={SHOE_LIST} onClickCard={setCurrentShoe}/>
         <Sidebar isOpen={isSidebarOpen} onClickClose={() => setIsSidebarOpen(false)}>
             <Cart cartItems={FAKE_CART_ITEMS}/>
         </Sidebar>
