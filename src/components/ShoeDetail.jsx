@@ -5,7 +5,7 @@ import {QTY, SIZES} from "../constant.js";
 export function ShoeDetail() {
 
     return (
-      <div className="flex flex-col lg:flex-row-reverse space-y-4">
+      <div className="flex flex-col lg:flex-row-reverse space-y-4 dark:text-white">
           <div className="flex-1 lg:-mt-32 lg:ml-28">
               <div className="bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876]
               via-40% to-[#4CC4C6] h-full flex-center">
@@ -29,7 +29,7 @@ export function ShoeDetail() {
 
               <div className="space-x-10">
                   <button className="h-14 w-44 bg-black text-white hover:bg-gray-900
-               active:bg-gray-700 btn-press-anim">
+               active:bg-gray-700 btn-press-anim dark:bg-white dark:text-black">
                       Ad to bag
                   </button>
                   <a href="#" className="text-lg font-bold underline underline-offset-4">
