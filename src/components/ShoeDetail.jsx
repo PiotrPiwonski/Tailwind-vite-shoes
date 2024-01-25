@@ -23,8 +23,8 @@ export function ShoeDetail() {
                   <div className="text-3xl font-extrabold md:text-6xl">
                       100 $
                   </div>
-                  <Select title={"QTY"} options={QTY}/>
-                  <Select title={"SIZE"} options={SIZES}/>
+                  <Select title={"QTY"} options={QTY} className={"w-24 p-4"}/>
+                  <Select title={"SIZE"} options={SIZES} className={"w-24 p-4"}/>
               </div>
 
               <div className="space-x-10">
