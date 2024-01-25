@@ -10,18 +10,19 @@ export function Nav({onClickShoppingBtn}) {
 
         <nav className="flex flex-wrap justify-between items-center z-10 relative">
             <a href="#">
-                <NikeLogo className="h-20 w-20"/>
+                <NikeLogo className="h-20 w-20 dark:fill-white"/>
             </a>
             <button
                 onClick={() => setIsMobileMenuShown(!isMobileMenuShown)}
                 className="hover:bg-gray-100 p-2 focus:ring-2 focus:ring-gray-200 rounded-lg
-                lg:hidden">
+                lg:hidden dark:text-gray-400 dark:hover:bg-gray-700">
                 <RxHamburgerMenu size={25}/>
             </button>
             <div className={`w-full lg:w-auto lg:block 
             ${isMobileMenuShown === false && "hidden"}`}>
                 <ul className="lg:flex-row flex flex-col bg-gray-50 text-lg border
-                 border-gray-100 rounded-lg p-4 lg:bg-transparent lg:border-none lg:space-x-8">
+                 border-gray-100 rounded-lg p-4 lg:bg-transparent lg:border-none lg:space-x-8
+                 lg:dark:text-white">
                     {ROUTES.map((route, i) => {
                        return <li
                            key={route}
