@@ -28,9 +28,16 @@ export function App() {
             );
     };
 
+    const removeFromCart = (productId) => {
+        const updatedCartItems = [...cartItems];
+        const existingItemIndex = cartItems.findIndex(item => item.product.id === productId);
+        updatedCartItems.splice(existingItemIndex, 1);
+        setCartItems(updatedCartItems);
+    }
+
     const addToCard = (product, qty,  size) => {
         if(qty && size) {
-            const updatedCartItems = [...cartItems];
+           const updatedCartItems = [...cartItems];
            const existingItemIndex = cartItems.findIndex(item => item.product.id === product.id);
            if(existingItemIndex > -1) {
                updatedCartItems[existingItemIndex].qty = qty;
@@ -48,8 +55,11 @@ export function App() {
         <Nav onClickShoppingBtn={() => setIsSidebarOpen(true)}/>
         <ShoeDetail shoe={currentShoe} onClickAdd={addToCard}/>
         <NewArrivalsSection items={SHOE_LIST} onClickCard={setCurrentShoe}/>
-        <Sidebar isOpen={isSidebarOpen} onClickClose={() => setIsSidebarOpen(false)}>
-            <Cart cartItems={cartItems}/>
+        <Sidebar
+            isOpen={isSidebarOpen}
+            onClickClose={() => setIsSidebarOpen(false)}
+        >
+            <Cart cartItems={cartItems} onClickTrash={removeFromCart}/>
         </Sidebar>
           <div className="fixed bottom-4 right-4">
             <button
